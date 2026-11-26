@@ -167,19 +167,24 @@ body #inizia .btn-main {
 /* The fixed words enter once; the inner word can then change independently. */
 @media (prefers-reduced-motion:no-preference) {
   .landing-intro .intro-segment,.landing-intro .hero-words {
-    animation:claspy-title-enter .55s cubic-bezier(.18,.78,.25,1) backwards;
+    animation:claspy-title-enter .78s cubic-bezier(.22,.68,.24,1) backwards;
   }
   .landing-intro .intro-segment {display:inline-block}
-  .landing-intro .intro-segment:nth-of-type(2) {animation-delay:.13s}
-  .landing-intro .hero-words {animation-delay:.25s}
-  .landing-intro .lead.load {animation-delay:.34s}
-  .landing-intro .ctas.load {animation-delay:.43s}
-  .landing-intro .radar.load {animation-delay:.52s}
+  .landing-intro .intro-segment:nth-of-type(2) {animation-delay:.09s}
+  .landing-intro .hero-words {animation-delay:.18s}
+  .landing-intro .lead.load {animation-delay:.27s}
+  .landing-intro .ctas.load {animation-delay:.35s}
+  .landing-intro .radar.load {animation-delay:.43s}
   @keyframes claspy-title-enter {
-    from {opacity:0;transform:translateY(.24em)}
+    from {opacity:0;transform:translateY(.15em)}
     to {opacity:1;transform:translateY(0)}
   }
 }
 @media (max-width:800px) {
   #panoramica .feature-example.scroll-reveal {transition-delay:0s}
+}
+
+@media(prefers-reduced-motion:no-preference) {
+  .motion-ready #panoramica .feature-example.scroll-reveal {transform:translateY(12px);transition-duration:.65s,.75s}
+  .motion-ready #panoramica .feature-example:is(.is-visible,:focus-within) {transform:none}
 }
