@@ -747,9 +747,6 @@ body{isolation:isolate}
 .over{padding-top:48px}
 @keyframes radar-turn{to{rotate:360deg}}
 .ground{display:block;overflow:hidden}
-.page-orbit{position:absolute;left:50%;top:50%;translate:-50% -50%;width:min(1000px,125vw);aspect-ratio:1;border:1px solid rgb(var(--acc-rgb)/.07);border-radius:50%;animation:radar-turn 100s linear infinite;pointer-events:none}
-.page-orbit::before,.page-orbit::after{content:"";position:absolute;inset:16%;border:1px dashed rgb(var(--acc-rgb)/.07);border-radius:50%}
-.page-orbit::after{inset:32%;border-style:solid;box-shadow:0 0 100px rgb(var(--acc-rgb)/.025)}
 .start{overflow:visible;isolation:isolate}
 .bigmark{-webkit-mask:none;mask:none;width:min(420px,70vw);opacity:.07}
 
@@ -790,7 +787,7 @@ body{isolation:isolate}
  
  
 }
-@media(prefers-reduced-motion:reduce){.beam,.r2,.page-orbit{animation:none!important}}
+@media(prefers-reduced-motion:reduce){.beam,.r2{animation:none!important}}
 
 /* Reference-like radar: a luminous fan, concentric rings and a complete stage. */
 .radar{width:min(720px,calc(100vw - 64px));margin-top:52px;margin-bottom:72px}
@@ -830,18 +827,6 @@ body{isolation:isolate}
 @media(prefers-reduced-motion:reduce){.pulse{transform:scale(.7);opacity:.12}.beam{rotate:20deg;opacity:.4}}
 @media print{.ground,.radar,.scroll-progress{display:none!important}.scroll-reveal{opacity:1!important;transform:none!important}}
 </style>
-<script>
-/* Geometry follows the rendered node positions, including the mobile layout. */
-(() => {
-  const ground = document.querySelector('.ground');
-  if (ground) {
-    const orbit = document.createElement('div');
-    orbit.className = 'page-orbit';
-    ground.appendChild(orbit);
-  }
-
-})();
-</script>
 
 
 
