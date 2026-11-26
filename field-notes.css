@@ -22,3 +22,19 @@
 @keyframes note-arrive{from{opacity:0;transform:translateX(12px)}}
 @keyframes note-pin{from{opacity:0;transform:scale(.6)}}
 @media print{.field-notes[data-observed] .field-note{opacity:1;transform:none}}
+.skip-link{position:fixed;z-index:120;left:1rem;top:1rem;padding:12px 18px;background:var(--fg);color:var(--bg);border-radius:8px;transform:translateY(-180%)}
+.skip-link:focus{transform:translateY(0)}
+#percorso .h2{max-width:18ch}
+.percorso-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin:clamp(26px,5vw,60px) 0 0;padding:0;list-style:none;text-align:left}
+.percorso-steps li{display:flex;flex-direction:column;align-items:flex-start}
+.percorso-steps li p{margin:0 0 12px}
+.percorso-steps a{display:inline-flex;align-items:center;min-height:44px;margin-top:auto;color:var(--fg);text-decoration:underline;text-underline-offset:4px}
+.support-contact{display:flex;justify-content:space-between;align-items:center;gap:24px;border-top:1px solid rgb(var(--tint)/.22);padding-top:clamp(30px,5vw,64px)}
+.support-contact .lead{margin-inline:0}
+.support-contact .btn{flex-shrink:0}
+@media(max-width:700px){
+  .percorso-steps{grid-template-columns:1fr}
+  .support-contact{flex-direction:column;align-items:flex-start}
+}
+@media(max-width:960px){.mobile-menu{max-height:calc(100dvh - 72px);overflow-y:auto}}
+@media(min-width:961px){.mobile-menu{display:none}}

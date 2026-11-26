@@ -348,22 +348,23 @@ footer{padding-block:24px 92px}
   </defs>
 </svg>
 
+<a class="skip-link" href="#top">Vai al contenuto</a>
 <div class="ground" aria-hidden="true"></div>
 
 <header class="nav" id="nav">
   <div class="wrap">
     <a href="#top" class="logo" aria-label="Claspy"><svg viewBox="-10 -15 245 145" aria-hidden="true"><use href="#mark"/></svg>claspy</a>
-    <ul aria-label="Sezioni"><li><a href="#problema">Il problema</a></li><li><a href="#prodotto">Come funziona</a></li><li><a href="#video">Video</a></li><li><a href="https://claspy.it/prezzi#piani">Prezzi</a></li><li><a href="#faq">Domande</a></li></ul>
+    <ul aria-label="Sezioni"><li><a href="#problema">Il problema</a></li><li><a href="#prodotto">Come funziona</a></li><li><a href="#percorso">Percorso</a></li><li><a href="#integrazioni">Evidenze</a></li><li><a href="#faq">Domande</a></li></ul>
     <div class="nav-r">
       
       <a href="#inizia" class="btn btn-sm">Richiedi una demo</a>
       <button class="burger" id="burger" aria-controls="mmenu" aria-label="Apri il menu" aria-expanded="false"><span></span><span></span></button>
     </div>
   </div>
-  <div class="mobile-menu" id="mmenu" hidden><a href="#problema">Il problema</a><a href="#prodotto">Come funziona</a><a href="#video">Video</a><a href="https://claspy.it/prezzi#piani">Prezzi</a><a href="#faq">Domande</a><a href="#inizia">Richiedi una demo</a></div>
+  <div class="mobile-menu" id="mmenu" hidden><a href="#problema">Il problema</a><a href="#prodotto">Come funziona</a><a href="#percorso">Percorso</a><a href="#integrazioni">Evidenze</a><a href="#faq">Domande</a><a href="#inizia">Richiedi una demo</a></div>
 </header>
 
-<main id="top">
+<main id="top" tabindex="-1">
 <section class="hero center">
   <svg class="arc" viewBox="0 0 600 600" aria-hidden="true"><path d="M60 600A540 540 0 0 1 600 60"/></svg>
   <div class="wrap">
@@ -383,16 +384,14 @@ footer{padding-block:24px 92px}
 </section>
 
 <section class="sec" id="problema" aria-labelledby="problem-title"><div class="wrap story-grid">
-  <div><p class="story-label">Il problema</p><h2 id="problem-title" class="h2">Un altro Excel. Le stesse domande.</h2></div>
+  <div><p class="story-label">Il problema</p><h2 id="problem-title" class="h2">Quali fornitori richiedono una verifica?</h2></div>
   <div class="story-body"><p>Il cliente cambia, la domanda ritorna: «Come gestite gli accessi?». La risposta è in un vecchio questionario. La prova è in una cartella. E qualcuno deve verificare se è ancora valida.</p>
-  <p>Con Claspy ritrovi la risposta insieme alla sua fonte. Se manca un documento, sai che cosa chiedere prima di restituire il file.</p><a href="#integrazioni">Esplora le fonti del fascicolo →</a></div>
+  <p>In Claspy parti dal fornitore. Vedi quanto ? critico il servizio, quali risposte sono arrivate e quali documenti deve ancora controllare il tuo team.</p><a href="#integrazioni">Esplora le fonti del fascicolo →</a></div>
 </div></section>
 <section class="over center" id="prodotto" aria-labelledby="supply-title">
   <div class="wrap">
     <h2 class="h2" id="supply-title">Dal fornitore alla risposta.</h2>
     <p class="lead">Seleziona un fornitore per esplorare il profilo di rischio, le risposte ricevute e le scadenze.</p>
-    <div class="ctas"><a href="#inizia" class="btn btn-main">Richiedi una demo</a></div>
-
     <div class="dashboard-tour">
       <div class="mock supply-console" role="region" aria-label="Registro e fascicolo illustrativi">
         <div class="supply-top"><h3>Registro fornitori</h3><span>Dati di esempio</span></div>
@@ -419,34 +418,13 @@ footer{padding-block:24px 92px}
     </div>
   </div>
 </section>
-<section id="video" class="sec" aria-labelledby="video-title"><div class="wrap video-wrap">
-  <h2 class="h2" id="video-title">Guarda Claspy in 50 secondi.</h2>
-  <video controls playsinline preload="none" width="1280" height="720" poster="https://claspy.it/assets/claspy-video-poster.jpg" aria-label="Presentazione di Claspy, senza audio">
-    <source src="https://claspy.it/assets/claspy-video.mp4" type="video/mp4">
-    <a href="https://claspy.it/#video">Guarda il video su claspy.it</a>
-  </video>
-  <p>Dal questionario del cliente al file compilato, con una prova per ogni risposta documentata.</p>
-</div></section>
-<section aria-label="Funzioni del fascicolo fornitore">
-  <div class="wrap">
-<div class="feats field-notes">
-  <article class="field-note">
-    <svg aria-hidden="true" viewBox="0 0 96 54"><g class="note-back"><rect x="19" y="11" width="36" height="26" rx="3"/><path d="M24 17h16"/></g><g class="note-folder"><path d="M35 22h12l4 4h24v21H35z"/><path d="M41 32h13m-13 5h23"/></g></svg>
-    <h3>Lavora dove lavora il tuo team</h3><p>Chi raccoglie le risposte e chi controlla i documenti può seguire lo stesso fascicolo fornitore.</p>
-  </article>
-  <article class="field-note">
-    <svg aria-hidden="true" viewBox="0 0 96 54"><rect x="24" y="7" width="42" height="39" rx="3"/><path d="M32 16h23m-23 8h17m-17 8h10"/><g class="note-check"><circle cx="64" cy="36" r="10"/><path pathLength="1" d="m59.5 36 3 3 6-7"/></g></svg>
-    <h3>Pensato per chi prepara gli audit</h3><p>Accanto a ciascuna risposta trovi il documento da esaminare durante la verifica.</p>
-  </article>
-  <article class="field-note">
-    <svg aria-hidden="true" viewBox="0 0 96 54"><path class="note-link" pathLength="1" d="M35 27h26"/><g class="note-person"><circle cx="27" cy="20" r="5"/><path d="M17 36a10 10 0 0 1 20 0z"/></g><g class="note-partner"><circle cx="68" cy="20" r="5"/><path d="M58 36a10 10 0 0 1 20 0z"/></g></svg>
-    <h3>Accesso per chi riceve l’invito</h3><p>Il pilota prevede la compilazione gratuita per il fornitore invitato dall’azienda.</p>
-  </article>
-  <article class="field-note">
-    <svg aria-hidden="true" viewBox="0 0 96 54"><path class="note-track" pathLength="1" d="M17 33h14l11-13h34"/><circle cx="18" cy="33" r="4"/><circle cx="43" cy="20" r="4"/><g class="note-marker"><circle cx="75" cy="20" r="7"/><circle cx="75" cy="20" r="2"/></g></svg>
-    <h3>Tracciato a ogni passo</h3><p>Nella demo puoi distinguere una richiesta in attesa, una risposta ricevuta e un documento da verificare.</p>
-  </article>
-</div>
+<section id="percorso" class="sec" aria-labelledby="percorso-title"><div class="wrap">
+  <h2 class="h2" id="percorso-title">Dall?invito alla verifica.</h2>
+  <ol class="field-notes percorso-steps">
+    <li class="field-note"><svg aria-hidden="true" viewBox="0 0 96 54"><g class="note-back"><rect x="19" y="11" width="36" height="26" rx="3"/><path d="M24 17h16"/></g><g class="note-folder"><path d="M35 22h12l4 4h24v21H35z"/><path d="M41 32h13m-13 5h23"/></g></svg><h3>Classifica il fornitore</h3><p>Parti dal servizio, dai dati trattati e dagli accessi ai sistemi. Il profilo di rischio orienta le domande da porre.</p><a href="#prodotto">Apri il registro ?</a></li>
+    <li class="field-note"><svg aria-hidden="true" viewBox="0 0 96 54"><rect x="24" y="7" width="42" height="39" rx="3"/><path d="M32 16h23m-23 8h17m-17 8h10"/><g class="note-check"><circle cx="64" cy="36" r="10"/><path pathLength="1" d="m59.5 36 3 3 6-7"/></g></svg><h3>Invia il questionario</h3><p>Il fornitore invitato accede gratuitamente al portale per compilare le risposte e allegare i documenti richiesti.</p><a href="#panoramica">Confronta i profili ?</a></li>
+    <li class="field-note"><svg aria-hidden="true" viewBox="0 0 96 54"><path class="note-link" pathLength="1" d="M35 27h26"/><g class="note-person"><circle cx="27" cy="20" r="5"/><path d="M17 36a10 10 0 0 1 20 0z"/></g><g class="note-partner"><circle cx="68" cy="20" r="5"/><path d="M58 36a10 10 0 0 1 20 0z"/></g></svg><h3>Verifica le evidenze</h3><p>Accosta ogni risposta alla sua fonte e individua i documenti da riesaminare o chiedere al fornitore.</p><a href="#integrazioni">Esplora il fascicolo ?</a></li>
+  </ol>
 </div></section>
 
 <section class="sec center" id="panoramica">
@@ -464,7 +442,7 @@ footer{padding-block:24px 92px}
         <div class="viz" aria-hidden="true"><div class="scan"><div class="line"></div><div class="dia a"><i>!</i></div><div class="dia b"><i>!</i></div></div></div>
         <h3>Questionari adattivi</h3>
         <p>Esplora come cambiano le domande al variare del rischio. Una risposta incompleta indica dove chiedere un approfondimento.</p>
-      <details><summary>Vedi esempio</summary><dl><div><dt>Profilo critico</dt><dd>Completo</dd></div><div><dt>Profilo rilevante</dt><dd>Mirato</dd></div><div><dt>Profilo ordinario</dt><dd>Essenziale</dd></div></dl></details></article>
+      <details><summary>Vedi esempio</summary><dl><div><dt>Profilo critico</dt><dd>Completo</dd></div><div><dt>Profilo rilevante</dt><dd>Mirato</dd></div><div><dt>Profilo ordinario</dt><dd>Non richiesto</dd></div></dl></details></article>
       <article class="card">
         <h3>Elenco ACN</h3>
         <p>Rivedi servizio, contratto e livello di rischio prima di preparare l’elenco dei fornitori.</p>
@@ -555,59 +533,37 @@ footer{padding-block:24px 92px}
   <div class="wrap">
     <h2 class="h2">Domande frequenti</h2>
     <p class="lead">Se la tua domanda non c'è, scrivici.</p>
-    <div class="tabs" role="tablist" id="tabs"></div>
+    <div class="tabs" role="tablist" id="tabs" aria-label="Argomenti delle domande frequenti"></div>
     <div class="faq" id="faqlist" role="tabpanel"></div>
   </div>
 </section>
 
-<section class="sec center" id="supporto">
-  <div class="tiles" data-tiles aria-hidden="true"></div>
-  <div class="wrap">
-    <h2 class="h2">Supporto</h2>
-    <p class="lead">Entra nella community, consulta la documentazione o scrivici.</p>
-    <div class="sup">
-      <article class="card">
-        <div class="ic"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="7.5"/><path d="M2.5 10h15M10 2.5c2 2.2 2.8 4.7 2.8 7.5S12 15.3 10 17.5C8 15.3 7.2 12.8 7.2 10S8 4.7 10 2.5z"/></svg></div>
-        <h3>Community</h3>
-        <p>Confrontati con altri responsabili compliance e IT che preparano lo stesso elenco.</p>
-        <a href="#supporto" class="go">Entra nella community</a>
-      </article>
-      <article class="card">
-        <div class="ic"><svg viewBox="0 0 20 20"><path d="M5 2.5h7l3.5 3.5v11.5H5z"/><path d="M12 2.5V6h3.5M8 10h5M8 13h5"/></svg></div>
-        <h3>Documentazione</h3>
-        <p>Guide per importare i fornitori, personalizzare i questionari e aggiungere colleghi.</p>
-        <a href="#supporto" class="go">Leggi le guide</a>
-      </article>
-      <article class="card">
-        <div class="ic"><svg viewBox="0 0 20 20"><path d="M3 10a7 7 0 1 1 3.2 5.9L3 17l1.1-3.1A7 7 0 0 1 3 10z"/><path d="M7 10h.01M10 10h.01M13 10h.01"/></svg></div>
-        <h3>Contattaci</h3>
-        <p>Domande su prodotto, prezzi o NIS2? Rispondiamo entro un giorno lavorativo.</p>
-        <a href="#supporto" class="go">Scrivici</a>
-      </article>
-    </div>
-  </div>
-</section>
+<section class="sec" id="supporto" aria-labelledby="supporto-title"><div class="wrap support-contact">
+  <div><h2 class="h2" id="supporto-title">Parliamo del tuo caso.</h2>
+    <p class="lead">Per una domanda sul pilota o sulla valutazione di un fornitore, scrivi al team Claspy.</p></div>
+  <a href="mailto:info@claspy.it" class="btn">info@claspy.it</a>
+</div></section>
 </main>
 
 <footer>
   <div class="wrap">
     <div class="fbrand">
       <a href="#top" class="logo" aria-label="Claspy"><svg viewBox="-10 -15 245 145" aria-hidden="true"><use href="#mark"/></svg>claspy</a>
-      <div class="flinks"><a href="#top">LinkedIn</a><a href="#top">YouTube</a></div>
+      <nav class="flinks" aria-label="Collegamenti di fine pagina"><a href="#prodotto">Registro fornitori</a><a href="#integrazioni">Fonti e documenti</a><a href="#faq">Domande frequenti</a></nav>
       <div class="fbtns">
         <a href="#inizia" class="btn btn-main">Richiedi una demo</a>
-        <a href="#supporto" class="btn">Entra nella community</a>
+        <a href="#supporto" class="btn">Contatta il team</a>
       </div>
     </div>
     <div class="legal">
-      <nav><span>© 2026 Claspy</span><a href="#top">Privacy</a><a href="#top">Termini di servizio</a><a href="#top">Cookie</a></nav>
+      <nav><span>© 2026 Claspy</span><a href="https://claspy.it/privacy">Privacy</a><a href="https://claspy.it/termini">Termini di servizio</a></nav>
       <span>Progettato e sviluppato in Italia</span>
     </div>
   </div>
 </footer>
 
 <div class="chat">
-  <div class="bubble" id="bubble" hidden><button aria-label="Chiudi il messaggio" id="bclose">×</button><svg viewBox="-10 -15 245 145" aria-hidden="true"><use href="#mark"/></svg>Hai domande su Claspy?<br><a href="#inizia">Prepara la richiesta demo</a></div>
+  <div class="bubble" id="bubble" hidden><button aria-label="Chiudi il messaggio" id="bclose">×</button><svg viewBox="-10 -15 245 145" aria-hidden="true"><use href="#mark"/></svg>Hai domande su Claspy?<br><a href="mailto:info@claspy.it">Scrivi al team</a></div>
   <button class="fab" aria-expanded="false" aria-controls="bubble" aria-label="Contatta Claspy"><svg viewBox="0 0 24 24"><path d="M12 3C6.5 3 2 6.9 2 11.7c0 2.3 1 4.4 2.7 6L4 21l3.9-1.6c1.2.4 2.6.6 4.1.6 5.5 0 10-3.9 10-8.7S17.5 3 12 3z"/></svg></button>
 </div>
 
@@ -633,19 +589,20 @@ document.querySelectorAll('[data-tiles]').forEach(t => t.innerHTML = '<i></i>'.r
 const faq = {
   'Generale': [
     ['Che cosa posso provare?', 'La demo mostra come il profilo del fornitore determina il questionario e dove ritrovare le evidenze ricevute.'],
-    ['I dati mostrati sono reali?', 'I fornitori e le risposte della dimostrazione sono esempi.']
+    ['I dati mostrati sono reali?', 'Nomi, conteggi e scadenze del registro sono dati illustrativi.'],
+    ['Chi pu? rispondere al questionario?', 'Nel pilota l?azienda invita il fornitore. Il fornitore accede gratuitamente al portale per rispondere e allegare le evidenze.']
   ],
   'Il prodotto': [
     ['Come cambia il questionario?', 'Nel modello illustrato il profilo critico prevede 91 domande, quello rilevante 21. Per il profilo ordinario non sono previste domande.'],
-    ['Dove trovo la prova di una risposta?', 'Nella panoramica puoi esplorare la relazione tra la risposta del fornitore e il documento che la accompagna.']
+    ['Dove trovo la prova di una risposta?', 'Nella sezione ?Un fascicolo, pi? fonti? seleziona Documento per vedere come si collega l?evidenza alla risposta del fornitore.']
   ]
 };
 const tabs = document.getElementById('tabs'), list = document.getElementById('faqlist');
 const chev = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg>';
 function render(k){
-  list.innerHTML = faq[k].map(([q,a], i) => `<div class="qa${i===0?' open':''}"><button aria-expanded="${i===0}">${q}${chev}</button><div class="ans"><div><p>${a}</p></div></div></div>`).join('');
+  list.innerHTML = faq[k].map(([q,a], i) => `<div class="qa${i===0?' open':''}"><button aria-expanded="${i===0}" aria-controls="faq-answer-${i}">${q}${chev}</button><div class="ans" id="faq-answer-${i}" aria-hidden="${i!==0}"><div><p>${a}</p></div></div></div>`).join('');
   list.querySelectorAll('.qa button').forEach(b => b.addEventListener('click', () => {
-    const qa = b.parentElement, o = !qa.classList.contains('open'); qa.classList.toggle('open', o); b.setAttribute('aria-expanded', o);
+    const qa = b.parentElement, o = !qa.classList.contains('open'); qa.classList.toggle('open', o); b.setAttribute('aria-expanded', o); qa.querySelector('.ans').setAttribute('aria-hidden', String(!o));
   }));
   tabs.querySelectorAll('.tab').forEach(t => { const active = t.dataset.k === k; t.setAttribute('aria-selected', String(active)); t.tabIndex = active ? 0 : -1; if (active) list.setAttribute('aria-labelledby',t.id); });
 }
