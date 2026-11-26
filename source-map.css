@@ -1,0 +1,53 @@
+.source-map {
+  position:relative;
+  isolation:isolate;
+  height:clamp(300px,32vw,380px);
+  margin:clamp(28px,5vw,56px) auto 0;
+  border:1px solid rgb(var(--tint)/.16);
+  border-radius:24px;
+  text-align:left;
+  background:radial-gradient(ellipse at 50% 50%,rgb(var(--acc-rgb)/.13),transparent 60%),var(--app);
+  box-shadow:inset 0 1px rgb(var(--tint)/.08);
+}
+.source-routes { position:absolute; inset:0; width:100%; height:100%; pointer-events:none }
+.source-routes path { fill:none; stroke:rgb(var(--tint)/.23); stroke-width:1.3; vector-effect:non-scaling-stroke }
+.source-routes .packet { opacity:0; stroke:#49ceba; stroke-width:3; stroke-linecap:round; stroke-dasharray:8 102 }
+.source-routes .routes-tall { display:none }
+.source-inputs { position:absolute; inset:20% auto 20% 5%; width:23%; display:flex; flex-direction:column; justify-content:space-between; align-items:stretch }
+.source-inputs button { position:relative; border:1px solid rgb(var(--tint)/.24); border-radius:12px; background:var(--app); color:var(--fg); font:inherit; font-weight:550; font-size:clamp(13px,1.45vw,16px); display:flex; align-items:center; gap:.65em; padding:12px clamp(9px,1.3vw,18px); line-height:1.25; cursor:pointer; min-height:46px; margin-block:-23px }
+.source-inputs svg { width:21px; flex:none; fill:none; stroke:currentColor; stroke-width:1.4; stroke-linecap:round; stroke-linejoin:round }
+.source-inputs button[aria-pressed="true"] { border-color:var(--acc); box-shadow:0 0 0 1px var(--acc); color:var(--fg); background:color-mix(in srgb,var(--app) 85%,var(--acc)) }
+.source-inputs button:focus-visible { outline:3px solid var(--fg); outline-offset:3px }
+.source-hub { position:absolute; top:50%; left:50%; translate:-50% -50%; width:clamp(88px,13vw,150px); aspect-ratio:1.45; display:grid; place-items:center; border:1px solid #cee7dd; border-radius:20px; background:linear-gradient(160deg,#ffffff,#d8eeea); box-shadow:0 6px 0 -2px #8db7a9,0 15px 25px -12px #061c20bb }
+.source-hub img { display:block; width:82%; height:auto }
+.source-record { position:absolute; background:var(--app); left:69%; width:27%; top:50%; translate:0 -50%; padding:clamp(14px,2vw,26px); border:1px solid rgb(var(--tint)/.25); border-radius:16px; box-shadow:0 17px 28px -20px #061c2099 }
+.source-caption,.source-field span { display:block; font-size:.75rem; color:var(--muted); line-height:1.3 }
+.source-record h3 { font-size:clamp(20px,2.2vw,29px); line-height:1.1; margin:5px 0 18px; letter-spacing:-.045em }
+.source-field { border-top:1px solid rgb(var(--tint)/.2); padding-top:12px }
+.source-field strong { display:block; font-size:1rem; line-height:1.3; margin-top:4px }
+.source-record p { color:var(--muted); font-size:.83rem; line-height:1.45; margin:6px 0 0 }
+@media(max-width:680px) {
+  .source-map { height:clamp(436px,115vw,470px); border-radius:18px }
+  .source-routes .routes-wide { display:none }
+  .source-routes .routes-tall { display:block }
+  .source-inputs { inset:12% 2% auto; width:auto; flex-direction:row; align-items:stretch; gap:5px; translate:0 -50% }
+  .source-inputs button { min-width:0; width:33.33%; flex-direction:column; justify-content:center; gap:5px; font-size:.79rem; padding:8px 3px; margin:0; border-radius:10px }
+  .source-inputs svg { width:17px }
+  .source-hub { top:42%; width:112px }
+  .source-record { top:auto; bottom:5%; left:8%; width:84%; padding:14px 16px; translate:none }
+  .source-record h3 { font-size:1.25rem; margin:3px 0 7px }
+  .source-field { padding-top:8px }
+}
+@media(prefers-reduced-motion:no-preference) {
+  .source-map.flow-enter .source-hub { animation:hub-settle .42s ease-out backwards }
+  .source-map.flow-enter .source-inputs button { animation:source-arrive .38s ease-out backwards; animation-delay:calc(.16s + var(--source-order,0)*.1s) }
+  .source-map.flow-enter .source-record { animation:source-arrive .4s .85s ease-out backwards }
+  .source-map .packet.is-moving { animation:flow-packet .65s ease-in-out backwards }
+  .source-map .packet[data-line="out"].is-moving { animation-delay:.4s }
+  .source-map .source-updated .source-field { animation:field-settle .32s ease-out }
+  @keyframes hub-settle { from { opacity:.2; transform:perspective(450px) rotateX(11deg) translateY(7px) } }
+  @keyframes source-arrive { from { opacity:.1; transform:translateY(8px) } }
+  @keyframes flow-packet { 0% { opacity:0; stroke-dashoffset:8 } 15%,85% { opacity:1 } 100% { opacity:0; stroke-dashoffset:-99 } }
+  @keyframes field-settle { from { opacity:.38; transform:translateY(3px) } }
+  @media(hover:hover) { .source-inputs button { transition:transform .19s ease,border-color .19s ease } .source-inputs button:hover { transform:translateY(-2px); border-color:var(--acc) } }
+}

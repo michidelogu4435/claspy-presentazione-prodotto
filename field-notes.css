@@ -1,0 +1,24 @@
+﻿.field-notes{gap:clamp(18px,3vw,44px)}
+.field-note{min-width:0;position:relative;padding:20px 0 0;border-top:1px solid rgb(var(--tint)/.22)}
+.field-note::before{content:"";position:absolute;inset:-1px auto auto 0;width:2.25rem;height:2px;background:var(--acc);transform-origin:left}
+.field-note svg{display:block;width:96px;height:54px;margin-bottom:14px;color:var(--acc);stroke:currentColor;stroke-width:1.6;stroke-linejoin:round;stroke-linecap:round;fill:none;overflow:visible}
+.field-note .note-back,.field-note svg>rect,.field-note svg>circle{opacity:.64}
+.field-note .note-folder,.field-note .note-check,.field-note .note-marker,.field-note svg>circle{fill:var(--bg)}
+.field-note h3{font-size:clamp(17px,1.5vw,21px);line-height:1.16;letter-spacing:-.024em;margin-bottom:10px}
+.field-note p{font-size:14px;line-height:1.58;color:var(--muted);margin:0}
+@media(prefers-reduced-motion:no-preference){
+ .field-notes[data-observed] .field-note{opacity:0;transform:translateY(13px);transition:opacity .42s var(--note-delay,0s),transform .5s cubic-bezier(.18,.72,.26,1) var(--note-delay,0s)}
+ .field-notes[data-observed] .field-note[data-visible]{opacity:1;transform:none}
+ .field-note[data-visible] svg .note-folder{animation:note-file .65s ease both var(--note-delay,0s)}
+ .field-note[data-visible] .note-check path,.field-note[data-visible] .note-link,.field-note[data-visible] .note-track{stroke-dasharray:1;animation:note-ink .7s ease both calc(var(--note-delay,0s) + .12s)}
+ .field-note[data-visible] .note-partner{animation:note-arrive .62s ease both var(--note-delay,0s)}
+ .field-note[data-visible] .note-marker{transform-box:fill-box;transform-origin:center;animation:note-pin .42s ease both calc(var(--note-delay,0s) + .55s)}
+ .field-note svg{transition:transform .25s ease}
+ .field-note::before{transition:transform .3s ease}
+ @media(hover:hover) and (pointer:fine){.field-note:hover svg{transform:perspective(340px) rotateY(-8deg) translateY(-3px)}.field-note:hover::before{transform:scaleX(1.7)}}
+}
+@keyframes note-file{from{opacity:0;transform:translate(-9px,-7px) rotate(-6deg)}}
+@keyframes note-ink{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+@keyframes note-arrive{from{opacity:0;transform:translateX(12px)}}
+@keyframes note-pin{from{opacity:0;transform:scale(.6)}}
+@media print{.field-notes[data-observed] .field-note{opacity:1;transform:none}}
