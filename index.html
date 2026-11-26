@@ -367,7 +367,7 @@ footer{padding-block:24px 92px}
 <section class="hero center">
   <svg class="arc" viewBox="0 0 600 600" aria-hidden="true"><path d="M60 600A540 540 0 0 1 600 60"/></svg>
   <div class="wrap">
-    <h1 class="load">Rischio fornitori, valutato da capo a fondo.</h1>
+    <h1 class="load"><span class="hero-phrase">Rischio fornitori,</span> valutato <span class="hero-phrase">da capo a fondo.</span></h1>
     <p class="lead load d1">Che tu stia iniziando adesso con la NIS2 o gestisca già centinaia di fornitori, Claspy segue tutto il percorso: classificazione, questionari ed elenco ACN.</p>
     <div class="ctas load d2">
       <a href="#inizia" class="btn btn-main">Richiedi una demo</a>
@@ -508,9 +508,41 @@ footer{padding-block:24px 92px}
 
 
 
-<section class="sec center start" id="inizia"><div class="wrap">
-  <h2 class="h2">Richiedi una demo di Claspy.</h2><p class="lead">Prepara una richiesta con il numero di fornitori che vuoi valutare e il passaggio che vorresti approfondire.</p>
-  <div class="ctas"><a class="btn btn-main btn-lg" href="mailto:?subject=Richiesta%20demo%20Claspy&amp;body=Vorrei%20una%20demo%20di%20Claspy.%0A%0AFornitori%20da%20valutare%3A%20%0AFunzionalit%C3%A0%20da%20approfondire%3A%20">Apri la bozza email ↗</a></div><small class="demo-hint">Aggiungi il tuo referente Claspy come destinatario.</small>
+<section class="sec start" id="inizia" aria-labelledby="demo-heading"><div class="wrap demo-layout">
+  <div><h2 class="h2" id="demo-heading">Prova Claspy nella tua azienda.</h2>
+    <p class="lead">Ricevi un link personale alla demo. Apri la scheda di un fornitore, esplora il suo questionario e controlla le evidenze raccolte.</p>
+  </div>
+  <div class="demo-panel" id="demo-handoff">
+    <label for="demo-profile">Per chi vuoi provare Claspy?</label>
+    <form action="https://claspy.it/scelta#wl-form" method="get">
+      <select id="demo-profile" name="piano" required>
+        <option value="">Seleziona il tipo di azienda</option>
+        <option value="fornitore">Per la mia azienda</option>
+        <option value="tecnico">Per uno studio che segue più aziende</option>
+        <option value="gratis">Voglio provare il check guidato</option>
+      </select>
+      <button class="btn btn-main" type="submit">Continua con l’email</button>
+    </form>
+    <p class="demo-status">Nel modulo Claspy inserisci la tua email per ricevere l’invito.</p>
+  </div>
+  <form id="demo-request" class="demo-panel" action="https://demo.claspy.it/api/iscrizione" method="post" hidden>
+    <label for="demo-email">Email di lavoro</label>
+    <input id="demo-email" name="email" type="email" autocomplete="email" maxlength="254" required placeholder="nome@azienda.it">
+    <label for="demo-type">Tipo di azienda</label>
+    <select id="demo-type" name="tipo" required>
+      <option value="">Seleziona il tuo profilo</option>
+      <option>Azienda che valuta fornitori</option>
+      <option>Fornitore che risponde ai questionari</option>
+      <option>Studio o consulente per più aziende</option>
+      <option>Altro</option>
+    </select>
+    <div hidden><input name="sito" tabindex="-1" autocomplete="off" aria-label="Lascia vuoto"></div>
+    <input type="hidden" name="fonte" value="Presentazione prodotto Claspy">
+    <label class="demo-consent"><input name="consenso" type="checkbox" value="si" required><span>Accetto di ricevere l’email con l’accesso alla demo. <a href="https://claspy.it/privacy" target="_blank" rel="noopener">Informativa privacy</a></span></label>
+    <button type="submit" class="btn btn-main">Ricevi la demo via email</button>
+    <p class="demo-status" role="status" aria-live="polite"></p>
+    <a class="demo-fallback" href="https://claspy.it/scelta#wl-form" hidden>Apri il modulo sul sito ufficiale</a>
+  </form>
 </div></section>
 
 <section class="sec center" id="faq">

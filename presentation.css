@@ -73,3 +73,28 @@ body .nav.scrolled {background:#072426;backdrop-filter:none;-webkit-backdrop-fil
 .supply-legend span::before {content:"";width:7px;height:7px;border-radius:2px;background:#83bcaf}
 .supply-legend span:first-child::before {background:#ff9a92}
 .supply-legend span:nth-child(2)::before {background:#e7b76a}
+.demo-layout {display:grid;grid-template-columns:minmax(0,1fr) minmax(0,440px);align-items:center;gap:clamp(32px,7vw,108px);text-align:left}
+#inizia .lead {margin:20px 0 0;max-width:42ch}
+.demo-panel {display:grid;gap:10px;padding:clamp(20px,4vw,36px);border:1px solid rgb(var(--tint)/.24);border-radius:20px;background:var(--app)}
+.demo-panel label {font-size:.95rem;font-weight:600}
+.demo-panel :is(input[type=email],select) {min-width:0;width:100%;min-height:48px;border:1px solid rgb(var(--tint)/.42);border-radius:9px;background:var(--bg);color:var(--fg);padding:10px 12px;font:inherit;font-size:1rem;margin-bottom:9px}
+.demo-panel :focus-visible {outline:3px solid var(--acc);outline-offset:3px}
+.demo-panel .demo-consent {display:flex;align-items:flex-start;gap:12px;line-height:1.5;font-weight:400;margin:2px 0 10px;color:var(--muted)}
+.demo-consent input {width:19px;height:19px;flex:none;margin-top:3px;accent-color:var(--acc)}
+.demo-panel a {color:var(--fg);text-decoration:underline;text-underline-offset:3px}
+.demo-panel button {min-height:48px;cursor:pointer}
+.demo-panel button:disabled {cursor:default}
+.demo-status {font-size:.95rem;line-height:1.5;color:var(--fg)}
+.demo-status:empty {display:none}
+@media(max-width:760px){.demo-layout {grid-template-columns:1fr;gap:24px}}
+@media(prefers-reduced-motion:no-preference){
+  .hero-phrase {display:inline-block;animation:claspy-phrase .55s cubic-bezier(.2,.8,.2,1) both}
+  .hero-phrase:last-child {animation-delay:.16s}
+  .motion-ready section .h2.is-visible {animation:claspy-phrase .46s cubic-bezier(.2,.8,.2,1) both}
+  .demo-status:not(:empty) {animation:claspy-phrase .24s ease-out both}
+  .demo-panel input,.demo-panel select {transition:border-color .18s,background-color .18s}
+  @keyframes claspy-phrase {from{opacity:.15;transform:translateY(.18em)}to{opacity:1;transform:none}}
+}
+@media(prefers-reduced-motion:reduce){.hero .load{animation:none}}
+.demo-panel[hidden] {display:none}
+#demo-handoff form {display:grid;gap:8px}

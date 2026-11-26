@@ -72,3 +72,39 @@
   window.dispatchEvent(new Event('resize'));
 })();
 
+(() => {
+  const form = document.getElementById('demo-request');
+  const submit = form.querySelector('button[type="submit"]');
+  const status = form.querySelector('[role="status"]');
+  const fallback = form.querySelector('.demo-fallback');
+  const handoff = document.getElementById('demo-handoff');
+  // The endpoint accepts anonymous site events without creating a lead or sending mail.
+  fetch(form.action, {method: 'POST', body: new URLSearchParams({evento: 'disponibilita-modulo'})})
+    .then(response => {
+      if (response.status !== 204 || handoff.contains(document.activeElement) || handoff.querySelector('select').value) return;
+      handoff.hidden = true;
+      form.hidden = false;
+    }).catch(() => {});
+  form.addEventListener('submit', async event => {
+    event.preventDefault();
+    if (submit.disabled || !form.reportValidity()) return;
+    const data = new URLSearchParams(new FormData(form));
+    submit.disabled = true;
+    fallback.hidden = true;
+    status.textContent = 'Prepariamo il tuo invito…';
+    try {
+      const response = await fetch(form.action, {method: 'POST', body: data});
+      const result = await response.json();
+      if (!response.ok || result.ok !== true) {
+        throw new Error(response.status === 429 ? 'Hai fatto più richieste in poco tempo. Riprova più tardi.' : '');
+      }
+      form.reset();
+      submit.textContent = 'Richiesta completata';
+      status.textContent = 'Invito inviato. Controlla la tua email, anche nella cartella spam.';
+    } catch (error) {
+      status.textContent = error.message.startsWith('Hai fatto') ? error.message : 'Invio non confermato. Controlla la posta oppure riprova.';
+      fallback.hidden = false;
+      submit.disabled = false;
+    }
+  });
+})();
