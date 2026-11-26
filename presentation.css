@@ -98,3 +98,16 @@ body .nav.scrolled {background:#072426;backdrop-filter:none;-webkit-backdrop-fil
 @media(prefers-reduced-motion:reduce){.hero .load{animation:none}}
 .demo-panel[hidden] {display:none}
 #demo-handoff form {display:grid;gap:8px}
+.hero-words {display:inline-grid;vertical-align:baseline;color:var(--menta)}
+.hero-words span {grid-area:1/1;visibility:hidden;text-align:left}
+.hero-words .current {visibility:visible}
+@media(prefers-reduced-motion:no-preference){.hero-words .current{animation:claspy-phrase .38s ease-out both}}
+.story-grid {display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,6vw,90px);align-items:start}
+.story-label {margin-bottom:16px;color:var(--muted)}
+.story-body {border-left:2px solid var(--acc);padding-left:clamp(18px,3vw,36px);font-size:clamp(1rem,1.7vw,1.22rem);line-height:1.6}
+.story-body p+p {margin-top:1em}
+.story-body a {display:inline-block;margin-top:1em;text-decoration:underline;text-underline-offset:4px}
+.video-wrap {max-width:980px}
+.video-wrap video {display:block;width:100%;height:auto;aspect-ratio:16/9;border-radius:18px;margin:26px 0 12px;background:var(--app);border:1px solid rgb(var(--tint)/.25)}
+.video-wrap p {color:var(--muted)}
+@media(max-width:700px){.story-grid{grid-template-columns:1fr}}

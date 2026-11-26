@@ -116,3 +116,17 @@
     }
   });
 })();
+(() => {
+  const words = [...document.querySelectorAll('.hero-words span')];
+  const preference = matchMedia('(prefers-reduced-motion: reduce)');
+  if (preference.matches || words.length < 2) return;
+  const sequence = [1, 2, 0];
+  let step = 0;
+  function changeWord() {
+    if (preference.matches || document.hidden || step === sequence.length) return;
+    words.forEach((word, i) => word.classList.toggle('current', i === sequence[step]));
+    step++;
+    if (step < sequence.length) setTimeout(changeWord, 1300);
+  }
+  setTimeout(changeWord, 1300);
+})();
