@@ -1,9 +1,9 @@
 <!doctype html>
 <html lang="it"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Claspy</title>
+<title>Claspy · Valutazione dei fornitori per le aziende NIS2</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="Claspy: valutazione dei fornitori per rischio, questionari adattivi ed elenco ACN pronto per il 31 maggio.">
+<meta name="description" content="Esplora la demo di Claspy per chi valuta i fornitori: profili di rischio, questionari mirati, prove e lacune in un unico registro.">
 <style>
 
 :root{
@@ -367,26 +367,19 @@ footer{padding-block:24px 92px}
 <section class="hero center">
   <svg class="arc" viewBox="0 0 600 600" aria-hidden="true"><path d="M60 600A540 540 0 0 1 600 60"/></svg>
   <div class="wrap">
-    <h1 class="load" aria-label="Questionari fornitori. Ritrova ogni risposta.">Questionari fornitori.<br>Ritrova ogni <span class="hero-words" aria-hidden="true"><span class="current">risposta.</span><span>prova.</span><span>fonte.</span></span></h1>
-    <p class="lead load d1">Quando un cliente ti chiede come proteggi i suoi dati, Claspy raccoglie risposte e documenti in un fascicolo che puoi riusare al prossimo questionario.</p>
+    <h1 class="load" aria-label="Valuta i fornitori. Ritrova ogni prova.">Valuta i fornitori.<br>Ritrova ogni <span class="hero-words" aria-hidden="true"><span class="current">prova.</span><span>risposta.</span><span>scadenza.</span></span></h1>
+    <p class="lead load d1">Per i team IT e acquisti che seguono la NIS2. Assegna le domande in base al rischio della fornitura e scopri dove serve un approfondimento. Il fornitore invitato risponde gratis.</p>
     <div class="ctas load d2">
-      <a href="#inizia" class="btn btn-main">Richiedi una demo</a>
-      <a href="#video" class="btn">Guarda il video · 50 s</a>
+      <a href="#inizia" class="btn btn-main">Prova Claspy</a>
+      <a href="#percorso" class="btn">Esplora il percorso</a>
     </div>
   </div>
-  <div class="radar load d3" aria-hidden="true">
-    <div class="ring r1"></div><div class="ring r2"></div><div class="ring r3"></div>
-    <div class="pulse"></div><div class="pulse p2"></div>
-    <div class="beam"></div>
-    <div class="core"><svg viewBox="-10 -15 245 145"><use href="#mark"/></svg></div>
-    <div class="node" style="left:14%;top:58%;--c:var(--teal)"><i></i></div>
-    <div class="node" style="left:27%;top:66%;--c:#9DB6B7;animation-delay:-2s"><i></i></div>
-    <div class="node" style="left:21%;top:78%;--c:var(--ambra);animation-delay:-4s"><i></i></div>
-    <div class="node" style="left:76%;top:60%;--c:var(--rosso);animation-delay:-1s"><i></i></div>
-    <div class="node" style="left:80%;top:80%;--c:var(--teal);animation-delay:-3s"><i></i></div>
-    <div class="node" style="left:62%;top:90%;--c:#9DB6B7;animation-delay:-5s"><i></i></div>
-    <div class="toast" id="toast"><span class="fix">Esempio</span><b><i></i><span id="t-title">Fornitore critico</span></b><p id="t-body">Logistica Ferri Srl: 4 risposte negative su 91 nella sezione gestione degli accessi.</p></div>
-  </div>
+  <a class="hero-record" href="#prodotto" aria-label="Apri il registro di esempio e confronta i fornitori">
+    <span><small>Fornitura di esempio</small><strong>Logistica Ferri Srl</strong></span>
+    <span><small>Classe di rischio</small><strong>Critico</strong></span>
+    <span><small>Risposte ricevute</small><strong>58 / 91</strong></span>
+    <span class="record-link">Apri il registro →</span>
+  </a>
 </section>
 
 <section class="sec" id="problema" aria-labelledby="problem-title"><div class="wrap story-grid">
@@ -632,20 +625,6 @@ addEventListener('scroll', onScroll, {passive:true}); onScroll();
 const burger = document.getElementById('burger'), mm = document.getElementById('mmenu');
 burger.addEventListener('click', () => { const open = mm.hidden; mm.hidden = !open; burger.setAttribute('aria-expanded', open); });
 mm.addEventListener('click', e => { if (e.target.tagName === 'A') { mm.hidden = true; burger.setAttribute('aria-expanded', false); } });
-
-/* hero alert cycle */
-const alerts = [
-  ['Fornitore critico','Logistica Ferri Srl: 4 risposte negative su 91 nella sezione gestione degli accessi.','var(--rosso)'],
-  ['Certificazione in scadenza','Datacenter Nord: la ISO 27001 scade tra 21 giorni.','var(--ambra)'],
-  ['Questionario completato','Cloudnova SpA ha risposto a tutte le 91 domande.','var(--teal)']
-];
-const toast = document.getElementById('toast'), tt = document.getElementById('t-title'), tb = document.getElementById('t-body'), ti = toast.querySelector('b i');
-let ai = 0;
-setInterval(() => {
-  if (document.hidden || matchMedia('(prefers-reduced-motion: reduce)').matches || toast.closest('section').classList.contains('motion-offscreen')) return;
-  toast.classList.add('out');
-  setTimeout(() => { ai = (ai + 1) % alerts.length; const [a,b,c] = alerts[ai]; tt.textContent = a; tb.textContent = b; ti.style.background = c; toast.classList.remove('out'); }, 450);
-}, 4500);
 
 /* static tile grounds */
 document.querySelectorAll('[data-tiles]').forEach(t => t.innerHTML = '<i></i>'.repeat(60));
