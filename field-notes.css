@@ -1,27 +1,35 @@
-﻿.field-notes{gap:clamp(18px,3vw,44px)}
-.field-note{min-width:0;position:relative;padding:20px 0 0;border-top:1px solid rgb(var(--tint)/.22)}
-.field-note::before{content:"";position:absolute;inset:-1px auto auto 0;width:2.25rem;height:2px;background:var(--acc);transform-origin:left}
-.field-note svg{display:block;width:96px;height:54px;margin-bottom:14px;color:var(--acc);stroke:currentColor;stroke-width:1.6;stroke-linejoin:round;stroke-linecap:round;fill:none;overflow:visible}
-.field-note .note-back,.field-note svg>rect,.field-note svg>circle{opacity:.64}
-.field-note .note-folder,.field-note .note-check,.field-note .note-marker,.field-note svg>circle{fill:var(--bg)}
-.field-note h3{font-size:clamp(17px,1.5vw,21px);line-height:1.16;letter-spacing:-.024em;margin-bottom:10px}
-.field-note p{font-size:14px;line-height:1.58;color:var(--muted);margin:0}
+.field-notes{gap:clamp(18px,3vw,44px)}
+.field-note{min-width:0;padding-top:20px;border-top:1px solid rgb(var(--tint)/.22)}
+.field-note svg{display:block;width:104px;height:64px;color:var(--acc);stroke:currentColor;stroke-width:1.8;stroke-linejoin:round;stroke-linecap:round;fill:none;overflow:visible}
+.field-note .note-folder,.field-note .note-invite,.field-note .note-stamp,.field-note .note-marker circle,.field-note .note-waypoint,.field-note .note-origin{fill:var(--bg)}
+.field-note h3{font-size:clamp(18px,1.55vw,22px);line-height:1.16;letter-spacing:-.025em;margin:14px 0 8px}
+.field-note p{font-size:15px;line-height:1.55;color:var(--muted);margin:0}
+.field-icon-replay{display:inline-flex;align-items:center;padding:0 8px 0 0;gap:5px;min-height:64px;color:var(--muted);border:0;border-radius:8px;background:transparent;font:inherit;cursor:pointer}
+.field-icon-replay span{font-size:12px;text-decoration:underline;text-underline-offset:3px}
+.field-icon-replay:is(:hover,:focus-visible){color:var(--fg)}
 @media(prefers-reduced-motion:no-preference){
- .field-notes[data-observed] .field-note{opacity:0;transform:translateY(13px);transition:opacity .42s var(--note-delay,0s),transform .5s cubic-bezier(.18,.72,.26,1) var(--note-delay,0s)}
- .field-notes[data-observed] .field-note[data-visible]{opacity:1;transform:none}
- .field-note[data-visible] svg .note-folder{animation:note-file .65s ease both var(--note-delay,0s)}
- .field-note[data-visible] .note-check path,.field-note[data-visible] .note-link,.field-note[data-visible] .note-track{stroke-dasharray:1;animation:note-ink .7s ease both calc(var(--note-delay,0s) + .12s)}
- .field-note[data-visible] .note-partner{animation:note-arrive .62s ease both var(--note-delay,0s)}
- .field-note[data-visible] .note-marker{transform-box:fill-box;transform-origin:center;animation:note-pin .42s ease both calc(var(--note-delay,0s) + .55s)}
- .field-note svg{transition:transform .25s ease}
- .field-note::before{transition:transform .3s ease}
- @media(hover:hover) and (pointer:fine){.field-note:hover svg{transform:perspective(340px) rotateY(-8deg) translateY(-3px)}.field-note:hover::before{transform:scaleX(1.7)}}
+  .is-playing .note-sheet{animation:field-file 1.05s ease-in-out}
+  .is-playing .note-folder{animation:field-pocket .55s .45s ease-out;transform-box:fill-box;transform-origin:center bottom}
+  .is-playing .note-rows path,.is-playing .note-tick,.is-playing .note-link,.is-playing .note-track{stroke-dasharray:1;animation:field-draw .38s ease-out backwards}
+  .is-playing .note-rows path:nth-child(2){animation-delay:.13s}
+  .is-playing .note-rows path:nth-child(3){animation-delay:.26s}
+  .is-playing .note-stamp,.is-playing .note-marker,.is-playing .note-waypoint{transform-box:fill-box;transform-origin:center;animation:field-stamp .45s .45s ease-out backwards}
+  .is-playing .note-tick{animation-delay:.58s}
+  .is-playing .note-link{animation-duration:.65s}
+  .is-playing .note-invite{animation:field-mail 1.08s ease-in-out}
+  .is-playing .note-partner{animation:field-receive .42s .65s ease-out backwards}
+  .is-playing .note-track{animation-duration:.85s}
+  .is-playing .note-waypoint{animation-delay:.38s}
+  .is-playing .note-marker{animation-delay:.7s}
 }
-@keyframes note-file{from{opacity:0;transform:translate(-9px,-7px) rotate(-6deg)}}
-@keyframes note-ink{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
-@keyframes note-arrive{from{opacity:0;transform:translateX(12px)}}
-@keyframes note-pin{from{opacity:0;transform:scale(.6)}}
-@media print{.field-notes[data-observed] .field-note{opacity:1;transform:none}}
+@keyframes field-file{0%{transform:translate(-9px,-8px) rotate(-5deg);opacity:.25}65%{transform:translate(0,6px)}100%{transform:none}}
+@keyframes field-pocket{45%{transform:scale(1.06,.92)}}
+@keyframes field-draw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+@keyframes field-stamp{0%{transform:scale(.35);opacity:.2}70%{transform:scale(1.14)}}
+@keyframes field-mail{0%{transform:translateX(-18px);opacity:.2}55%{transform:translate(6px,-5px);opacity:1}82%{transform:translateX(18px);opacity:.1}100%{transform:none;opacity:1}}
+@keyframes field-receive{from{opacity:.25;transform:translateX(7px)}}
+@media(max-width:600px){.feats.field-notes{grid-template-columns:1fr 1fr;gap:24px 16px}.field-icon-replay{gap:0}.field-note svg{width:85px}}
+@media(max-width:380px){.feats.field-notes{grid-template-columns:1fr}}
 .skip-link{position:fixed;z-index:120;left:1rem;top:1rem;padding:12px 18px;background:var(--fg);color:var(--bg);border-radius:8px;transform:translateY(-180%)}
 .skip-link:focus{transform:translateY(0)}
 .support-contact{display:flex;justify-content:space-between;align-items:center;gap:24px;border-top:1px solid rgb(var(--tint)/.22);padding-top:clamp(30px,5vw,64px)}
