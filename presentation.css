@@ -73,18 +73,16 @@ body .nav.scrolled {background:#072426;backdrop-filter:none;-webkit-backdrop-fil
 .supply-legend span::before {content:"";width:7px;height:7px;border-radius:2px;background:#83bcaf}
 .supply-legend span:first-child::before {background:#ff9a92}
 .supply-legend span:nth-child(2)::before {background:#e7b76a}
-#inizia {background:var(--app);border-block:1px solid rgb(var(--tint)/.16)}
-.demo-layout {display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,.8fr);align-items:center;gap:32px clamp(32px,7vw,108px);text-align:left}
-#inizia .h2 {max-width:13ch;text-wrap:balance}
-#inizia .lead {margin:18px 0 24px;max-width:46ch}
-#inizia .demo-launch {min-height:48px;gap:16px}
+#inizia {border-block:1px solid rgb(var(--tint)/.16);background:var(--bg)}
+.demo-layout {display:grid;gap:32px;text-align:center}
+#inizia .h2 {font-size:clamp(2.4rem,5vw,4rem);text-wrap:balance}
+#inizia .lead {margin:18px auto 24px;max-width:51ch}
+.demo-actions {display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap}
+#inizia .demo-launch {min-height:48px;gap:12px}
 .demo-caption,.demo-instruction {font-size:.93rem;line-height:1.5;color:var(--muted)}
-.demo-caption {margin-top:12px}
-.demo-pilot {padding:clamp(22px,3vw,36px);background:var(--menta);color:var(--petrolio);border-radius:16px}
-.demo-pilot h3 {font-size:clamp(1.5rem,3vw,2.15rem);letter-spacing:-.035em;line-height:1.12;text-wrap:balance}
-.demo-pilot p,.demo-previous>p {margin:14px 0 18px;line-height:1.55}
-.demo-pilot a,.demo-panel a {display:inline-flex;align-items:center;gap:8px;min-height:44px;text-decoration:underline;text-underline-offset:4px}
-.demo-pilot a {font-weight:650;color:inherit}
+.demo-caption {margin:16px auto 0;max-width:55ch}
+.demo-panel a {display:inline-flex;align-items:center;min-height:44px;text-decoration:underline}
+.demo-previous {width:min(100%,680px);margin:auto;text-align:left}
 .demo-previous {grid-column:1/-1;border-top:1px solid rgb(var(--tint)/.24);padding-top:8px}
 .demo-previous summary {width:fit-content;min-height:44px;padding-block:14px;cursor:pointer;line-height:1.45}
 .demo-previous>p {color:var(--muted);max-width:66ch}

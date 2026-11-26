@@ -414,63 +414,32 @@ footer{padding-block:24px 92px}
     </div>
   </div>
 </section>
-<section aria-label="Le azioni del fascicolo fornitore">
-  <div class="wrap feats field-notes">
-    <article class="field-note">
-      <svg aria-hidden="true" viewBox="0 0 100 64"><g class="note-sheet"><rect x="29" y="8" width="37" height="41" rx="3"/><path d="M36 16h22m-22 6h16"/></g><path class="note-folder" d="M16 29h24l6 6h38l-5 23H20z"/></svg>
-      <h3>Raccogli i documenti</h3><p>Contratti, certificazioni e risposte restano associati alla scheda del fornitore.</p>
-    </article>
-    <article class="field-note">
-      <svg aria-hidden="true" viewBox="0 0 100 64"><rect x="25" y="7" width="42" height="49" rx="4"/><g class="note-rows"><path pathLength="1" d="M33 17h25"/><path pathLength="1" d="M33 25h18"/><path pathLength="1" d="M33 33h14"/></g><circle class="note-stamp" cx="66" cy="44" r="12"/><path class="note-tick" pathLength="1" d="m60 44 4 4 8-9"/></svg>
-      <h3>Verifica le risposte</h3><p>Confronta una risposta ricevuta con il documento che la sostiene e individua cosa manca.</p>
-    </article>
-    <article class="field-note">
-      <svg aria-hidden="true" viewBox="0 0 100 64"><g><circle cx="19" cy="20" r="6"/><path d="M7 42a12 12 0 0 1 24 0z"/></g><path class="note-link" pathLength="1" d="M34 30h30"/><g class="note-invite"><rect x="39" y="22" width="20" height="15" rx="2"/><path d="m40 24 9 7 9-7"/></g><g class="note-partner"><circle cx="80" cy="20" r="6"/><path d="M68 42a12 12 0 0 1 24 0z"/></g></svg>
-      <h3>Invita il fornitore</h3><p>Il fornitore invitato accede gratuitamente al portale per rispondere e allegare le evidenze.</p>
-    </article>
-    <article class="field-note">
-      <svg aria-hidden="true" viewBox="0 0 100 64"><path class="note-track" pathLength="1" d="M13 44h22l16-21h32"/><circle class="note-origin" cx="13" cy="44" r="4"/><circle class="note-waypoint" cx="51" cy="23" r="4"/><g class="note-marker"><circle cx="83" cy="23" r="8"/><path d="M83 18v5l3 2"/></g></svg>
-      <h3>Segui le scadenze</h3><p>Ritrova richieste in attesa, contratti da rivedere e certificazioni da aggiornare.</p>
-    </article>
-  </div>
-</section>
-
-<section class="sec center" id="panoramica">
-  <div class="tiles" data-tiles aria-hidden="true"></div>
+<section class="sec center" id="panoramica" aria-labelledby="features-title">
   <div class="wrap">
-    <h2 class="h2">Come cambia la valutazione per fornitura</h2>
-    <p class="lead">Il team IT assegna la classe di rischio con acquisti e qualità. Il fornitore invitato risponde gratis. Qui puoi esplorare esempi del modello previsto per le aziende medie soggette alla NIS2.</p>
-    <button type="button" class="overview-motion" aria-pressed="false">Pausa animazioni</button>
-    <div class="bento">
-      <article class="card">
-        <h3>Classificazione del rischio</h3>
-        <p>Confronta servizi, dati e accessi per distinguere i fornitori critici, rilevanti e ordinari.</p>
-        <div class="stars" aria-hidden="true"><span>*</span><span>*</span><span class="hot"><svg viewBox="-10 -15 245 145"><use href="#mark"/></svg></span><span>*</span><span>*</span></div>
-      <details><summary>Vedi esempio</summary><dl><div><dt>Servizi cloud</dt><dd>Critico</dd></div><div><dt>Assistenza IT</dt><dd>Rilevante</dd></div><div><dt>Cancelleria</dt><dd>Ordinario</dd></div></dl></details></article>
-      <article class="card">
-        <div class="viz" aria-hidden="true"><div class="scan"><div class="line"></div><div class="dia a"><i>!</i></div><div class="dia b"><i>!</i></div></div></div>
-        <h3>Questionari adattivi</h3>
-        <p>Esplora come cambiano le domande al variare del rischio. Una risposta incompleta indica dove chiedere un approfondimento.</p>
-      <details><summary>Vedi esempio</summary><dl><div><dt>Profilo critico</dt><dd>Completo</dd></div><div><dt>Profilo rilevante</dt><dd>Mirato</dd></div><div><dt>Profilo ordinario</dt><dd>Non richiesto</dd></div></dl></details></article>
-      <article class="card">
-        <h3>Elenco ACN</h3>
-        <p>Rivedi servizio, contratto e livello di rischio prima di preparare l’elenco dei fornitori.</p>
-        <div class="viz acn" aria-hidden="true">
-<div class="code"><b>fornitore</b>  Cloudnova SpA
-<b>livello</b>    critico
-<b>servizio</b>   hosting
-<b>contratto</b>  2025-0142
-<b>valutato</b>   18/11/2026
-<b>esito</b>      da verificare</div>
-          <svg class="wire" viewBox="0 0 34 60"><path d="M0 30H12V9H34M12 30H34M12 30V51H34"/><path class="run" d="M0 30H12V9H34"/><path class="run" d="M0 30H34" style="animation-delay:-.9s"/><path class="run" d="M0 30H12V51H34" style="animation-delay:-1.8s"/></svg>
-          <div class="stack"><div><i></i><span></span></div><div><i></i><span></span></div><div><i></i><span></span></div></div>
-        </div>
-      <details><summary>Vedi esempio</summary><dl><div><dt>Cloudnova</dt><dd>Hosting</dd></div><div><dt>Fascicolo</dt><dd>Da rivedere</dd></div><div><dt>Referente</dt><dd>Acquisti</dd></div></dl></details></article>
-      <article class="card">
-        <div class="viz" aria-hidden="true"><div class="locks" id="locks"></div></div>
-        <h3>Monitoraggio continuo</h3>
-        <p>Individua certificazioni in scadenza, contratti da rinnovare e risposte da aggiornare.</p>
-      <details><summary>Vedi esempio</summary><dl><div><dt>Invito</dt><dd>Inviato</dd></div><div><dt>Questionario</dt><dd>In corso</dd></div><div><dt>Riesame</dt><dd>Da fare</dd></div></dl></details></article>
+    <h2 class="h2" id="features-title">Le funzionalità principali di Claspy</h2>
+    <p class="lead">Dal profilo condiviso alla verifica di una risposta. Esplora tre esempi del prodotto in sviluppo.</p>
+    <div class="feature-list">
+      <article class="feature-example type-0">
+        <h3>Profilo riutilizzabile</h3><p>Il fornitore prepara un solo profilo e sceglie quali informazioni condividere con ciascun cliente.</p>
+        <details><summary aria-label="Apri il fascicolo — Profilo riutilizzabile">
+          <span class="feature-stage" aria-hidden="true"><span class="assembly"><span class="sheet sheet-0"><b>Profilo</b><i></i><i></i></span><span class="sheet sheet-1"><b>Cliente A</b><i></i><i></i></span><span class="sheet sheet-2"><b>Cliente B</b><i></i><i></i></span></span></span>
+          <span class="feature-control">Apri il fascicolo<span aria-hidden="true" class="plus">+</span></span>
+        </summary><p>Il cliente A riceve il certificato. Il cliente B vede solo i dati aziendali selezionati.</p></details>
+      </article>
+      <article class="feature-example type-1">
+        <h3>Risposte assistite</h3><p>Chi compila un questionario può partire dalle risposte già date. Il suggerimento dell’IA passa dal referente prima dell’invio.</p>
+        <details><summary aria-label="Esamina la proposta — Risposte assistite">
+          <span class="feature-stage" aria-hidden="true"><span class="assembly"><span class="sheet sheet-0"><b>Domanda</b><i></i><i></i></span><span class="sheet sheet-1"><b>Archivio</b><i></i><i></i></span><span class="sheet sheet-2"><b>Proposta</b><i></i><i></i></span></span></span>
+          <span class="feature-control">Esamina la proposta<span aria-hidden="true" class="plus">+</span></span>
+        </summary><p>Alla domanda sui backup, il referente ritrova la risposta precedente e può aggiornarla prima di confermarla.</p></details>
+      </article>
+      <article class="feature-example type-2">
+        <h3>Qualità delle evidenze</h3><p>Chi valuta distingue ciò che il fornitore dichiara da ciò che un documento sostiene o un controllo verifica.</p>
+        <details><summary aria-label="Esplora le evidenze — Qualità delle evidenze">
+          <span class="feature-stage" aria-hidden="true"><span class="assembly"><span class="sheet sheet-0"><b>Risposta</b><i></i><i></i></span><span class="sheet sheet-1"><b>Documento</b><i></i><i></i></span><span class="sheet sheet-2"><b>Controllo</b><i></i><i></i></span></span></span>
+          <span class="feature-control">Esplora le evidenze<span aria-hidden="true" class="plus">+</span></span>
+        </summary><p>Una risposta è dichiarata, un allegato può sostenerla e un controllo può verificarla. Se manca la risposta, resta da fare.</p></details>
+      </article>
     </div>
   </div>
 </section>
@@ -504,15 +473,13 @@ footer{padding-block:24px 92px}
 <section class="sec start" id="inizia" aria-labelledby="demo-heading"><div class="wrap demo-layout">
   <div class="demo-intro">
     <h2 class="h2" id="demo-heading">Prova Claspy con il tuo team.</h2>
-    <p class="lead">Entra nei panni dell’azienda che invita i fornitori. Scegli un fornitore nel registro, apri il questionario e controlla risposte e scadenze.</p>
-    <a class="btn btn-main demo-launch" href="#prodotto">Apri il registro di esempio <span aria-hidden="true">→</span></a>
-    <p class="demo-caption">Anteprima interattiva con dati simulati. Accesso immediato.</p>
+    <p class="lead">Scegli un fornitore nel registro di esempio e controlla le sue risposte insieme al tuo team.</p>
+    <div class="demo-actions">
+      <a class="btn btn-main demo-launch" href="#prodotto">Esplora il registro <span aria-hidden="true">→</span></a>
+      <a class="btn demo-launch" href="mailto:info@claspy.it?subject=Richiesta%20pilota%20registro%20fornitori%20Claspy&amp;body=Vorrei%20valutare%20un%20pilota%20del%20registro%20fornitori.%0A%0ATipo%20di%20azienda%3A%20%0AFornitori%20da%20coinvolgere%3A%20">Contatta il team <span aria-hidden="true">↗</span></a>
+    </div>
+    <p class="demo-caption">Il registro contiene dati simulati. Per una prova con i tuoi fornitori, scrivi al team Claspy.</p>
   </div>
-  <aside class="demo-pilot" aria-labelledby="pilot-heading">
-    <h3 id="pilot-heading">Vuoi provarlo con i tuoi fornitori?</h3>
-    <p>Per valutare un pilota, scrivi al team indicando il tipo di azienda e quanti fornitori vorresti coinvolgere.</p>
-    <a href="mailto:info@claspy.it?subject=Richiesta%20pilota%20registro%20fornitori%20Claspy&amp;body=Vorrei%20valutare%20un%20pilota%20del%20registro%20fornitori.%0A%0ATipo%20di%20azienda%3A%20%0AFornitori%20da%20coinvolgere%3A%20">Scrivi a info@claspy.it <span aria-hidden="true">↗</span></a>
-  </aside>
   <details class="demo-previous">
     <summary>Cerchi la demo precedente per compilare i questionari dei clienti?</summary>
     <p>Puoi richiedere via email la demo dedicata alle aziende e agli studi che rispondono ai questionari.</p>
@@ -836,7 +803,7 @@ body{isolation:isolate}
 
 <script src="vendor/motion-mini-14.14.0.js" defer></script>
 <script src="presentation.js" defer></script>
-<script src="field-notes.js" defer></script>
-<script src="panoramica.js" defer></script>
+
+
 <script src="source-map.js" defer></script>
 </body></html>
