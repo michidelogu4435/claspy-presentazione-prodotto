@@ -85,30 +85,41 @@
   const submit = form.querySelector('button[type="submit"]');
   const status = form.querySelector('[role="status"]');
   const fallback = form.querySelector('.demo-fallback');
-  const handoff = document.getElementById('demo-handoff');
-  // The endpoint accepts anonymous site events without creating a lead or sending mail.
-  fetch(form.action, {method: 'POST', body: new URLSearchParams({evento: 'disponibilita-modulo'})})
+  const fields = form.querySelector('#demo-email-fields');
+  const endpoint = form.dataset.endpoint;
+  // A capability check with no contact details. Keep the native form usable offline or without JS.
+  fetch(endpoint, {method: 'POST', body: new URLSearchParams({evento: 'disponibilita-modulo'})})
     .then(response => {
-      if (response.status !== 204 || handoff.contains(document.activeElement) || handoff.querySelector('select').value) return;
-      handoff.hidden = true;
-      form.hidden = false;
+      if (response.status !== 204 || form.contains(document.activeElement) || form.querySelector(':checked')) return;
+      fields.disabled = false;
+      fields.hidden = false;
+      form.querySelector('.demo-instruction').hidden = true;
+      submit.textContent = 'Ricevi la demo via email';
     }).catch(() => {});
   form.addEventListener('submit', async event => {
+    if (fields.disabled) return;
     event.preventDefault();
     if (submit.disabled || !form.reportValidity()) return;
+    const profile = form.querySelector('[name=piano]:checked');
     const data = new URLSearchParams(new FormData(form));
+    data.set('piano', profile.dataset.plan);
+    data.set('tipo', profile.dataset.type);
+    data.set('fonte', 'Presentazione prodotto Claspy');
+    fallback.href = 'https://claspy.it/scelta?piano=' + encodeURIComponent(profile.value) + '#wl-form';
     submit.disabled = true;
     fallback.hidden = true;
     status.textContent = 'Prepariamo il tuo invito…';
     try {
-      const response = await fetch(form.action, {method: 'POST', body: data});
+      const response = await fetch(endpoint, {method: 'POST', body: data});
       const result = await response.json();
       if (!response.ok || result.ok !== true) {
         throw new Error(response.status === 429 ? 'Hai fatto più richieste in poco tempo. Riprova più tardi.' : '');
       }
-      form.reset();
-      submit.textContent = 'Richiesta completata';
-      status.textContent = 'Invito inviato. Controlla la tua email, anche nella cartella spam.';
+      form.querySelector('.demo-profiles').disabled = true;
+      // Keep fields enabled for the submit handler, but prevent edits after a successful request.
+      form.querySelectorAll('#demo-email-fields input').forEach(input => { input.disabled = true; });
+      submit.textContent = 'Invito inviato';
+      status.textContent = 'Trovi il link nella tua casella email. Se tarda ad arrivare, controlla la cartella spam.';
     } catch (error) {
       status.textContent = error.message.startsWith('Hai fatto') ? error.message : 'Invio non confermato. Controlla la posta oppure riprova.';
       fallback.hidden = false;

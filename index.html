@@ -479,40 +479,40 @@ footer{padding-block:24px 92px}
 
 
 <section class="sec start" id="inizia" aria-labelledby="demo-heading"><div class="wrap demo-layout">
-  <div><h2 class="h2" id="demo-heading">Prova Claspy nella tua azienda.</h2>
-    <p class="lead">Ricevi un link personale alla demo. Apri la scheda di un fornitore, esplora il suo questionario e controlla le evidenze raccolte.</p>
+  <div class="demo-intro">
+    <h2 class="h2" id="demo-heading">Prova il registro fornitori.</h2>
+    <p class="lead">Entra nei panni dell’azienda che invita i fornitori. Scegli un fornitore nel registro, apri il questionario e controlla risposte e scadenze.</p>
+    <a class="btn btn-main demo-launch" href="#prodotto">Apri il registro di esempio <span aria-hidden="true">→</span></a>
+    <p class="demo-caption">Anteprima interattiva con dati simulati. Accesso immediato.</p>
   </div>
-  <div class="demo-panel" id="demo-handoff">
-    <label for="demo-profile">Per chi vuoi provare Claspy?</label>
-    <form action="https://claspy.it/scelta#wl-form" method="get">
-      <select id="demo-profile" name="piano" required>
-        <option value="">Seleziona il tipo di azienda</option>
-        <option value="fornitore">Per la mia azienda</option>
-        <option value="tecnico">Per uno studio che segue più aziende</option>
-        <option value="gratis">Voglio provare il check guidato</option>
-      </select>
-      <button class="btn btn-main" type="submit">Continua con l’email</button>
-    </form>
-    <p class="demo-status">Nel modulo Claspy inserisci la tua email per ricevere l’invito.</p>
-  </div>
-  <form id="demo-request" class="demo-panel" action="https://demo.claspy.it/api/iscrizione" method="post" hidden>
-    <label for="demo-email">Email di lavoro</label>
-    <input id="demo-email" name="email" type="email" autocomplete="email" maxlength="254" required placeholder="nome@azienda.it">
-    <label for="demo-type">Tipo di azienda</label>
-    <select id="demo-type" name="tipo" required>
-      <option value="">Seleziona il tuo profilo</option>
-      <option>Azienda che valuta fornitori</option>
-      <option>Fornitore che risponde ai questionari</option>
-      <option>Studio o consulente per più aziende</option>
-      <option>Altro</option>
-    </select>
-    <div hidden><input name="sito" tabindex="-1" autocomplete="off" aria-label="Lascia vuoto"></div>
-    <input type="hidden" name="fonte" value="Presentazione prodotto Claspy">
-    <label class="demo-consent"><input name="consenso" type="checkbox" value="si" required><span>Accetto di ricevere l’email con l’accesso alla demo. <a href="https://claspy.it/privacy" target="_blank" rel="noopener">Informativa privacy</a></span></label>
-    <button type="submit" class="btn btn-main">Ricevi la demo via email</button>
-    <p class="demo-status" role="status" aria-live="polite"></p>
-    <a class="demo-fallback" href="https://claspy.it/scelta#wl-form" hidden>Apri il modulo sul sito ufficiale</a>
+  <aside class="demo-pilot" aria-labelledby="pilot-heading">
+    <h3 id="pilot-heading">Vuoi provarlo con i tuoi fornitori?</h3>
+    <p>Per valutare un pilota, scrivi al team indicando il tipo di azienda e quanti fornitori vorresti coinvolgere.</p>
+    <a href="mailto:info@claspy.it?subject=Richiesta%20pilota%20registro%20fornitori%20Claspy&amp;body=Vorrei%20valutare%20un%20pilota%20del%20registro%20fornitori.%0A%0ATipo%20di%20azienda%3A%20%0AFornitori%20da%20coinvolgere%3A%20">Scrivi a info@claspy.it <span aria-hidden="true">↗</span></a>
+  </aside>
+  <details class="demo-previous">
+    <summary>Cerchi la demo precedente per compilare i questionari dei clienti?</summary>
+    <p>Puoi richiedere via email la demo dedicata alle aziende e agli studi che rispondono ai questionari.</p>
+  <form id="demo-request" class="demo-panel" action="https://claspy.it/scelta#wl-form" method="get" data-endpoint="https://demo.claspy.it/api/iscrizione">
+    <fieldset class="demo-profiles">
+      <legend>Come vuoi usare Claspy?</legend>
+      <label><input type="radio" name="piano" value="fornitore" data-type="Azienda" data-plan="Per la vostra azienda" required><span><strong>Per la mia azienda</strong><small>Rispondo ai questionari dei clienti.</small></span></label>
+      <label><input type="radio" name="piano" value="tecnico" data-type="Studio o consulente" data-plan="Per chi segue più aziende" required><span><strong>Per il mio studio</strong><small>Seguo i questionari di più aziende.</small></span></label>
+      <label><input type="radio" name="piano" value="gratis" data-type="Check guidato" data-plan="Gratis" required><span><strong>Voglio esplorare il check guidato</strong><small>Provo con un questionario di esempio.</small></span></label>
+    </fieldset>
+    <fieldset id="demo-email-fields" hidden disabled>
+      <label for="demo-email">Email di lavoro</label>
+      <input id="demo-email" name="email" type="email" autocomplete="email" maxlength="254" required placeholder="nome@azienda.it">
+      <div hidden><input name="sito" tabindex="-1" autocomplete="off" aria-label="Lascia vuoto"></div>
+      <label class="demo-consent"><input name="consenso" type="checkbox" value="si" required><span>Accetto di ricevere l’email con l’accesso alla demo.</span></label>
+      <a href="https://claspy.it/privacy">Informativa privacy</a>
+    </fieldset>
+    <p class="demo-instruction">Su claspy.it inserirai l’email a cui inviare il tuo link personale.</p>
+    <button type="submit" class="btn btn-main">Continua su claspy.it <span aria-hidden="true">→</span></button>
+    <p class="demo-status" role="status" aria-atomic="true"></p>
+    <a class="demo-fallback" href="https://claspy.it/scelta#wl-form" hidden>Continua sul sito ufficiale</a>
   </form>
+  </details>
 </div></section>
 
 <section class="sec center" id="faq">
