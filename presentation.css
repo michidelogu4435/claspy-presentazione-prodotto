@@ -128,3 +128,17 @@ body .nav.scrolled {background:#072426;backdrop-filter:none;-webkit-backdrop-fil
 .video-wrap video {display:block;width:100%;height:auto;aspect-ratio:16/9;border-radius:18px;margin:26px 0 12px;background:var(--app);border:1px solid rgb(var(--tint)/.25)}
 .video-wrap p {color:var(--muted)}
 @media(max-width:700px){.story-grid{grid-template-columns:1fr}}
+.opening-register h1 {max-width:18ch;margin:0 auto;font-size:clamp(2.45rem,6.4vw,5.6rem);line-height:1.02;letter-spacing:-.045em;text-wrap:balance}
+#prodotto.opening-register {padding-top:clamp(44px,7vw,88px)}
+.opening-register .hero-words {color:#a4e1d2;font-weight:600}
+.register-sr {position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.pilot-scope {background:var(--menta);color:var(--petrolio)}
+.pilot-layout {display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(28px,6vw,80px);align-items:start}
+.pilot-intro p,.pilot-details p {font-size:1rem;line-height:1.6;margin:16px 0}
+.pilot-intro .btn {color:var(--petrolio);background:transparent;border:1px solid var(--teal-dk)}
+.pilot-details details {border-bottom:1px solid #9abdb5}
+.pilot-details details:first-child {border-top:1px solid #9abdb5}
+.pilot-details summary {font-size:1.12rem;font-weight:600;padding:17px 0;cursor:pointer}
+.pilot-details p {max-width:65ch;margin:0 0 18px}
+.pilot-details summary:focus-visible,.pilot-intro a:focus-visible {outline:3px solid var(--teal-dk);outline-offset:3px}
+@media(max-width:760px){.pilot-layout{grid-template-columns:1fr}}

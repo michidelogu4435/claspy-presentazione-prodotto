@@ -365,28 +365,10 @@ footer{padding-block:24px 92px}
 </header>
 
 <main id="top" tabindex="-1">
-<section class="hero center">
-  <svg class="arc" viewBox="0 0 600 600" aria-hidden="true"><path d="M60 600A540 540 0 0 1 600 60"/></svg>
+<section class="over center opening-register" id="prodotto" aria-labelledby="supply-title">
   <div class="wrap">
-    <h1 class="load" aria-label="Valuta i fornitori. Ritrova ogni prova.">Valuta i fornitori.<br>Ritrova ogni <span class="hero-words" aria-hidden="true"><span class="current">prova.</span><span>risposta.</span><span>scadenza.</span></span></h1>
-    <p class="lead load d1">Per i team IT e acquisti che seguono la NIS2. Assegna le domande in base al rischio della fornitura e scopri dove serve un approfondimento. Il fornitore invitato risponde gratis.</p>
-    <div class="ctas load d2">
-      <a href="#inizia" class="btn btn-main">Richiedi una demo</a>
-      <a href="#prodotto" class="btn">Esplora il registro</a>
-    </div>
-  </div>
-  <a class="hero-record" href="#prodotto" aria-label="Apri il registro di esempio e confronta i fornitori">
-    <span><small>Fornitura di esempio</small><strong>Logistica Ferri Srl</strong></span>
-    <span><small>Classe di rischio</small><strong>Critico</strong></span>
-    <span><small>Risposte ricevute</small><strong>58 / 91</strong></span>
-    <span class="record-link">Apri il registro →</span>
-  </a>
-</section>
-
-<section class="over center" id="prodotto" aria-labelledby="supply-title">
-  <div class="wrap">
-    <h2 class="h2" id="supply-title">Dal fornitore alla risposta.</h2>
-    <p class="lead">Seleziona un fornitore per esplorare il profilo di rischio, le risposte ricevute e le scadenze.</p>
+    <h1 id="supply-title" class="load">Prova il registro fornitori.</h1>
+    <p class="lead load d1">Seleziona un fornitore e controlla <span class="hero-words" aria-hidden="true"><span class="current">il rischio.</span><span>le risposte.</span><span>le scadenze.</span></span><span class="register-sr">il rischio, le risposte e le scadenze.</span></p>
     <div class="dashboard-tour">
       <div class="mock supply-console" role="region" aria-label="Registro e fascicolo illustrativi">
         <div class="supply-top"><h3>Registro fornitori</h3><span>Dati di esempio</span></div>
@@ -404,7 +386,7 @@ footer{padding-block:24px 92px}
           <article class="supply-dossier" aria-label="Fascicolo selezionato">
             <div class="supply-filetop"><span>Fascicolo fornitore</span><img src="claspy-light.png" alt="Claspy" width="86" height="24"></div>
             <h4 data-field="name">Logistica Ferri Srl</h4><p data-field="service">Magazzino e spedizioni</p>
-            <div class="dashboard-guide" role="group" aria-label="Vista del fascicolo"><button type="button" aria-pressed="true">Profilo</button><button type="button" aria-pressed="false">Questionario</button><button type="button" aria-pressed="false">Scadenza</button></div>
+            <div class="dashboard-guide" role="group" aria-label="Vista del fascicolo"><button type="button" aria-pressed="true">Profilo</button><button type="button" aria-pressed="false">Questionario</button><button type="button" aria-pressed="false">Scadenza</button><button type="button" aria-pressed="false">Decisione</button></div>
             <div class="supply-reading" aria-live="polite" aria-atomic="true"><small data-field="label">Profilo di rischio</small><strong data-field="value">Critico</strong><p data-field="description">Il profilo critico prevede 91 domande.</p></div>
             <div class="supply-status"><span data-field="status">58 di 91 risposte</span><progress aria-label="Risposte ricevute" max="91" value="58"></progress></div>
           </article>
@@ -416,7 +398,8 @@ footer{padding-block:24px 92px}
 <section class="sec center" id="panoramica">
   <div class="tiles" data-tiles aria-hidden="true"></div>
   <div class="wrap">
-    <h2 class="h2">Panoramica del prodotto</h2>
+    <h2 class="h2">Come cambia la valutazione per fornitura</h2>
+    <p class="lead">Il team IT assegna la classe di rischio con acquisti e qualità. Il fornitore invitato risponde gratis. Qui puoi esplorare esempi del modello previsto per le aziende medie soggette alla NIS2.</p>
     <button type="button" class="overview-motion" aria-pressed="false">Pausa animazioni</button>
     <div class="bento">
       <article class="card">
@@ -455,7 +438,7 @@ footer{padding-block:24px 92px}
 <section id="integrazioni" class="sec center" aria-labelledby="flow-title">
   <div class="wrap">
     <h2 class="h2" id="flow-title">Un fascicolo, più fonti.</h2>
-    <p class="lead">Dal dato iniziale alla verifica. Seleziona una fonte per vedere dove compare nella scheda del fornitore.</p>
+    <p class="lead">Seleziona una fonte per ritrovarla nella scheda del fornitore. Una dichiarazione, un documento e un controllo tecnico hanno pesi diversi quando valuti una risposta.</p>
     <div class="source-map" data-flow-map>
       <svg class="source-routes" preserveAspectRatio="none" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
         <g class="routes-wide"><path data-line="0" pathLength="100" d="M24 20H30C38 20 34 50 42 50H50"/><path data-line="1" pathLength="100" d="M24 50H50"/><path data-line="2" pathLength="100" d="M24 80H30C38 80 34 50 42 50H50"/><path data-line="out" pathLength="100" d="M50 50H77"/></g>
@@ -515,6 +498,20 @@ footer{padding-block:24px 92px}
   </details>
 </div></section>
 
+<section class="sec pilot-scope" id="pilota" aria-labelledby="pilot-title"><div class="wrap pilot-layout">
+  <div class="pilot-intro">
+    <h2 class="h2" id="pilot-title">Come funzionerebbe il pilota?</h2>
+    <p>La proposta è seguire da 10 a 20 fornitori per due o tre mesi. IT e acquisti possono misurare quanti rispondono, quanto tempo impiegano e quante risposte arrivano con una prova.</p>
+    <a class="btn" href="mailto:info@claspy.it?subject=Pilota%20Claspy%20per%20la%20valutazione%20dei%20fornitori">Parla del pilota con Claspy</a>
+  </div>
+  <div class="pilot-details">
+    <details open><summary>Da quali forniture partire?</summary><p>Per ogni servizio contano l’accesso a sistemi e dati, l’impatto di un’interruzione, il tempo e il costo di sostituzione e il ruolo del fornitore nella gestione dei sistemi. Lo stesso partner può offrire due servizi con rischi diversi. L’IT propone la classe e annota il motivo di un’eventuale correzione.</p></details>
+    <details><summary>Che cosa riceve il fornitore?</summary><p>Nel modello previsto, acquisti importa l’elenco da Excel o CSV e invita i referenti. I fornitori critici ricevono il questionario completo e la richiesta di prove. Per i rilevanti le domande sono mirate. Per gli ordinari può bastare lo screening. Il team può seguire i solleciti e verificare quali controlli sono già coperti da una certificazione.</p></details>
+    <details><summary>Come si legge una risposta?</summary><p><strong>Dichiarato</strong> indica una risposta del fornitore. <strong>Provato</strong> indica che è disponibile un documento a sostegno. <strong>Verificato</strong> identifica un controllo eseguito. <strong>Da fare</strong> segnala un elemento ancora aperto. Il fascicolo previsto riunisce fonte, data e decisione sulla lacuna, con un responsabile e una scadenza quando serve un rimedio.</p></details>
+    <details><summary>Chi vede le prove condivise?</summary><p>La proposta separa le valutazioni interne dell’azienda dal profilo riusabile del fornitore. Quest’ultimo sceglierebbe quali prove consegnare a ciascun cliente e potrebbe far verificare le bozze preparate con l’aiuto dell’AI. Prima di usare dati reali, accessi, conservazione e condizioni di condivisione vanno concordati con il team.</p></details>
+    <details><summary>Quanto costerebbe e cosa posso provare oggi?</summary><p>Il riferimento in valutazione per l’azienda che invita è circa 300 € al mese, con fatturazione annuale, fino a 100 fornitori. Le condizioni del pilota e delle fasce superiori sono da concordare. Rispondere a un invito è gratuito.</p><p>Oggi puoi esplorare il registro simulato. Importazione, solleciti automatici, riuso del profilo ed esportazione dell’elenco per ACN rientrano nel progetto della piattaforma. Il formato di esportazione è ancora da verificare.</p></details>
+  </div>
+</div></section>
 <section class="sec center" id="faq">
   <div class="wrap">
     <h2 class="h2">Domande frequenti</h2>

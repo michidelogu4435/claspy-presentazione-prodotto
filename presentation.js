@@ -37,6 +37,13 @@
   let company = 0;
   let stage = 0;
   let manual = false;
+  const decisions = [
+    ['Richiedi una prova', 'Il fornitore dichiara di revocare gli accessi a fine incarico. Il team IT richiede un esempio datato della verifica.'],
+    ['Rivedi le prove', 'Tutte le risposte sono arrivate. Il responsabile confronta i documenti con i controlli dichiarati prima di chiudere la valutazione.'],
+    ['Sollecita il referente', 'Acquisti chiede al referente paghe le quattro risposte mancanti e annota la scadenza del 20 dicembre.'],
+    ['Pianifica il riesame', 'Il questionario è completo. Il team registra quando ricontrollare la validità della certificazione.'],
+    ['Documenta la classe', 'Per il servizio di pulizia il team registra la motivazione della classe ordinaria e riesamina gli accessi se cambia il contratto.']
+  ];
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
   let fieldAnimation;
   function render() {
@@ -50,7 +57,8 @@
     const views = [
       ['Profilo di rischio',risk,profile],
       ['Questionario',total ? received + ' / ' + total : 'Non richiesto',outstanding],
-      ['Scadenza',remaining ? date : total ? 'Completato' : 'Nessuna',remaining ? outstanding : 'Nessuna scadenza in sospeso.']
+      ['Scadenza',remaining ? date : total ? 'Completato' : 'Nessuna',remaining ? outstanding : 'Nessuna scadenza in sospeso.'],
+      ['Decisione di esempio', ...decisions[company]]
     ];
     fields.name.textContent = button.firstElementChild.textContent;
     fields.service.textContent = service;
