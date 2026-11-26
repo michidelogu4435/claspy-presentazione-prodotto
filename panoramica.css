@@ -28,3 +28,32 @@
 details[open] .plus{transform:rotate(45deg)}
 @media(max-width:800px){.feature-list{grid-template-columns:1fr;max-width:540px;margin-inline:auto}.feature-stage{height:155px}}
 @media(prefers-reduced-motion:reduce){.assembly,.sheet,.plus{transition:none}}
+
+/* Product overview: the grid fades into the surrounding page at its edges. */
+#panoramica {
+  position:relative;
+  isolation:isolate;
+  background:radial-gradient(ellipse at 50% 55%,#103b3c 0%,#08272a 48%,var(--bg) 78%);
+}
+#panoramica::before {
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  z-index:-1;
+  background-image:linear-gradient(90deg,transparent calc(100% - 4px),#021618 0),
+                   linear-gradient(transparent calc(100% - 4px),#021618 0);
+  background-size:clamp(120px,19vw,290px) clamp(104px,13vw,200px);
+  background-position:center;
+  mask-image:radial-gradient(ellipse at center,#000 26%,transparent 76%);
+}
+#panoramica .feature-example {
+  border:1px solid #335654;
+  border-radius:16px;
+  padding:clamp(16px,2vw,28px);
+  background:linear-gradient(155deg,#193d3c,#0c2a2c 62%,#092326);
+  box-shadow:inset 0 1px 0 rgb(207 247 230/.07),0 14px 32px -22px #001113;
+}
+#panoramica .feature-stage {
+  background:radial-gradient(ellipse at 50% 68%,#396b62,#1c4745 59%,#102f32 96%);
+}
