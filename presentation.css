@@ -132,13 +132,5 @@ body .nav.scrolled {background:#072426;backdrop-filter:none;-webkit-backdrop-fil
 .landing-intro h1 {max-width:21ch;font-size:clamp(2.35rem,6.4vw,5.6rem)}
 .landing-intro .hero-words {color:#a4e1d2}
 #prodotto.opening-register {padding-top:clamp(44px,7vw,88px)}
-.pilot-scope {background:var(--menta);color:var(--petrolio)}
-.pilot-layout {display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(28px,6vw,80px);align-items:start}
-.pilot-intro p,.pilot-details p {font-size:1rem;line-height:1.6;margin:16px 0}
-.pilot-intro .btn {color:var(--petrolio);background:transparent;border:1px solid var(--teal-dk)}
-.pilot-details details {border-bottom:1px solid #9abdb5}
-.pilot-details details:first-child {border-top:1px solid #9abdb5}
-.pilot-details summary {font-size:1.12rem;font-weight:600;padding:17px 0;cursor:pointer}
-.pilot-details p {max-width:65ch;margin:0 0 18px}
-.pilot-details summary:focus-visible,.pilot-intro a:focus-visible {outline:3px solid var(--teal-dk);outline-offset:3px}
-@media(max-width:760px){.pilot-layout{grid-template-columns:1fr}}
+
+@media(prefers-reduced-motion:reduce){.landing-intro .radar,.landing-intro .radar *,.landing-intro .radar *::after{animation:none!important;transition:none!important}}
