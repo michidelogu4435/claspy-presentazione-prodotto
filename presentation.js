@@ -37,6 +37,8 @@
   let company = 0;
   let stage = 0;
   let manual = false;
+  const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+  let fieldAnimation;
   function render() {
     const button = suppliers[company];
     const {service,risk,answers,due} = button.dataset;
@@ -60,6 +62,12 @@
     suppliers.forEach((item,i) => item.setAttribute('aria-pressed',String(i === company)));
     tabs.forEach((item,i) => item.setAttribute('aria-pressed',String(i === stage)));
     select.value = String(company);
+    if (manual && !reducedMotion.matches && window.ClaspyMotion) {
+      fieldAnimation?.stop();
+      fieldAnimation = window.ClaspyMotion.animate([fields.value, fields.description], {
+        opacity: [0.45, 1], transform: ['translateY(5px)', 'translateY(0px)']
+      }, {duration: 0.22, ease: 'easeOut'});
+    }
   }
   function selectSupplier(index) { manual = true; company = index; render(); }
   suppliers.forEach((item,i) => item.addEventListener('click',() => selectSupplier(i)));
